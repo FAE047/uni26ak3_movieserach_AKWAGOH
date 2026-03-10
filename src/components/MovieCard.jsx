@@ -10,7 +10,7 @@ export default function MovieCard({ movie }){
       {/* Viser bilde hvis filmen har en gydlig poster */}
       {movie.Poster && movie.Poster !== "N/A" ? (
         <figure>
-          <img src={movie.Poster} alt={movie.Title} />
+          <img src={movie.Poster} alt={movie.Title} loading="lazy" />
           <figcaption>{movie.Title}</figcaption>
         </figure>
       ) : (

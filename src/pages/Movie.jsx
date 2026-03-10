@@ -61,7 +61,7 @@ export default function Movie(){
                 {/* Viser bilde hvis filmen har poster*/}
                 {data.Poster && data.Poster !== "N/A" ? (
                     <figure>
-                        <img src={data.Poster} alt={data.Title} />
+                        <img src={data.Poster} alt={data.Title} loading="lazy"/>
                         <figcaption>{data.Title}</figcaption>
                     </figure>
                 ) : (
