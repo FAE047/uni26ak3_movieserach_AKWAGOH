@@ -44,6 +44,8 @@ const response = await fetch(
 )
 
 const data = await response.json()
+// Sjekker at standardlister funker - forventer 10 filmer
+// NS_BINDING_ABORTED/404 meldinger i konsollen = vanlige React + Firefox/Google Chrome (nettsteder), dev - problemer
 console.log("James Bond data:", data)
 
 if (data.Search) {
@@ -73,6 +75,8 @@ try {
   `https://www.omdbapi.com/?s=${search}&apikey=${apiKey}`
 )
 const data = await response.json()
+// Bekrefter at søk gir treff
+// NS_BINDING_ABORTED/404 meldinger i konsollen = vanlige React + Firefox/Google Chrome (nettsteder), dev - problemer
 console.log("Søkeresultatet:", data)
 
 if (data.Search) {
