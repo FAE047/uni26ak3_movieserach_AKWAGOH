@@ -1,3 +1,7 @@
+/*
+ARBEIDSKRAV 3 - Oppgaven Er Basert Og Løst På Forelesninger Om (React basics, states/effects, routing, API) Og,
+Webtricks LMS Kursmateriale (Vite og React Oppsett, Komponentstruktur, Introduksjon Til React, Asynkron Databehandling Osv.) */
+
 // App.jsx bestemmer hvilke sider brukeren kan gå til, og hvilke komponenter som skal vises.
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
