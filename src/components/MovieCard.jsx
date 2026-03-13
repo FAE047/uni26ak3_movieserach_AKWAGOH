@@ -2,7 +2,7 @@ import { Link } from "react-router-dom" // For navigasjon til filmside
 
 export default function MovieCard({ movie }){
   // Lager slug fra filmtittelen
- const slug = movie.Title.toLowerCase().replace(/ /g, "-")
+ const slug = movie.Title.replace(/\s/g,"-").toLowerCase()
 
  return(
   <li>
