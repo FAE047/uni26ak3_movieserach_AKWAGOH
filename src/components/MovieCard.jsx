@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom" // For navigasjon til filmside
+import posternotfoundImg from "../assets/posternotfound.jpg"
 
 export default function MovieCard({ movie }){
   // Lager slug fra filmtittelen
@@ -10,7 +11,11 @@ export default function MovieCard({ movie }){
       {/* Viser bilde hvis filmen har en gydlig poster */}
       {movie.Poster && movie.Poster !== "N/A" ? (
         <figure>
-          <img src={movie.Poster} alt={movie.Title} loading="lazy" />
+          <img src={movie.Poster} 
+          alt={movie.Title} 
+          loading="lazy" 
+          onError={(e) => (e.target.src = posternotfoundImg)}
+          />
           <figcaption>{movie.Title}</figcaption>
         </figure>
       ) : (

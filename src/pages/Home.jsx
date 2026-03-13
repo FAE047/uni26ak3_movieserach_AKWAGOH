@@ -64,16 +64,10 @@ if (data.Search) {
 }
 
 const getMovies = async () => {
-// Søket skal ikke kjøre før bruker har skrevet minst 3 tegn
-  if (search.trim().length < 3){
-      setMessage("Skriv minst 3 tegn for å søke.")
-  return
-}
-
 try {
 // Søker etter filmer basert på tittel
   const response = await fetch(
-  `https://www.omdbapi.com/?s=${search}&apikey=${apiKey}`
+  `https://www.omdbapi.com/?s=${search}&type=movie&apikey=${apiKey}`
 )
 const data = await response.json()
 // Bekrefter at søk gir treff
@@ -122,12 +116,10 @@ getMovies()
 return (
     <main>
       <header>
-        <h1>Movie Search</h1>
+        <h1>Filmoversikt</h1>
       </header>
 
       <section>
-        <h2>Søk etter film</h2>
-
         <form onSubmit={handleSubmit}>
           <label htmlFor="search">Søk etter film</label>
           <input

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
+import posternotfoundImg from "../assets/posternotfound.jpg"
 
 export default function Movie(){
   // Henter slug fra URL - en
@@ -61,7 +62,11 @@ export default function Movie(){
                 {/* Viser bilde hvis filmen har poster*/}
                 {data.Poster && data.Poster !== "N/A" ? (
                     <figure>
-                        <img src={data.Poster} alt={data.Title} loading="lazy"/>
+                        <img src={data.Poster} alt={data.Title} loading="lazy"
+                        onError={(e) => { 
+                            e.target.src = posternotfoundImg;
+                        }}
+                       />
                         <figcaption>{data.Title}</figcaption>
                     </figure>
                 ) : (
