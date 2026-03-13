@@ -40,7 +40,7 @@ const getDefaultMovies = async () => {
 
       // Henter James Bond - filmer som standardinnhold på forsiden
 const response = await fetch(
-    `https://www.omdbapi.com/?s=james bond&apikey=${apiKey}`
+    `https://www.omdbapi.com/?s=james bond&type=movie&apikey=${apiKey}`
 )
 
 const data = await response.json()
